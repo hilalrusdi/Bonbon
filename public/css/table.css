@@ -1,0 +1,51 @@
+.card_table{
+    margin-left: 8rem;
+}
+
+.tittle_table{
+    font-size: 2.5rem;
+    color: rgb(64, 67, 68);
+    text-shadow: 0 0 10px rgb(214, 214, 214);
+}
+
+.tabel_karyawan{
+    border-collapse: collapse;
+    margin: 2.5rem 0;
+    font-size: 1.5em;
+    min-width: 70rem;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgb(206, 206, 206);
+}
+
+.tabel_karyawan .thead_karyawan .tr_karyawan{
+    background-color: #009879;
+    color: rgb(232, 233, 214);
+    text-align: left;
+    font-weight: bold;
+}
+
+.tabel_karyawan th,
+.tabel_karyawan td{
+    padding: 1rem 1.5rem;
+}
+
+.tabel_karyawan .tbody_karyawan .tr_karyawan{
+    border-bottom: 1px solid #dddddd;
+}
+
+.tabel_karyawan .tbody_karyawan .tr_karyawan:hover{
+    background-color: #cececef3;
+}
+
+.tabel_karyawan .tbody_karyawan .tr_karyawan:nth-of-type(even){
+    background-color: #f3f3f3f3;
+}
+
+.tabel_karyawan .tbody_karyawan .tr_karyawan:nth-of-type(even):hover{
+    background-color: #cececef3;
+}
+
+.tabel_karyawan .tbody_karyawan .tr_karyawan:last-of-type{
+    border-bottom: 2px solid rgb(127, 110, 161);
+}
