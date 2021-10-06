@@ -3,20 +3,20 @@ body {
 }
 
 .head {
-    width: 100vw;
-    height: 5vw;
+    width: 100vh;
+    height: 5vh;
     display: flex;
     border: 2px;
-    margin: 30px;
+    margin: 3rem;
     padding: auto;
-    font-size: 20px;
+    font-size: 2rem;
 }
 
 .container {
-    width: 100vw;
+    width: 100vh;
     display: flex;
     border: 2px;
-    margin: 30px;
+    margin: 3rem;
     justify-content: center;
     padding: auto;
 }
@@ -26,8 +26,8 @@ body {
     border: 10px black;
     text-align: center;
     background: grey;
-    width: 300px;
-    height: 300px;
+    width: 30rem;
+    height: 30rem;
     margin: 2px;
 }
 
