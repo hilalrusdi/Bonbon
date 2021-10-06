@@ -1,0 +1,99 @@
+:root{
+    --text-primary: rgb(14, 20, 12);
+    --text-secondary: #70b654;
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.action-profile{
+    position: fixed;
+    top: 1.5rem;
+    right: 2rem;
+}
+
+.action-profile .profile{
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.action-profile .profile img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+
+.action-profile .menu-profile{
+    position: absolute;
+    top: 6rem;
+    right: -0.8rem;
+    padding: 0.8rem 2.4rem;
+    background: #BDD2B6;
+    width: 20rem;
+    border-radius: 15px;
+    box-sizing: 0 0.6rem 2rem black;
+    transition: 0.5s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.action-profile .menu-profile.active{
+    visibility: visible;
+    opacity: 1;
+}
+
+.action-profile .menu-profile .identity{
+    top: 1rem;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.action-profile .menu-profile::before{
+    content: '';
+    position: absolute;
+    top: -0.4rem;
+    right: 1.7rem;
+    width: 2rem;
+    height: 2rem;
+    background:#BDD2B6;
+    transform: rotate(45deg);
+}
+
+h1{
+    color: var(--text-primary);
+    line-height: 1em;
+    padding-top: 1rem;
+}
+
+h2{
+    color: var(--text-secondary);
+    font-weight: 400;
+    padding-bottom: 3rem;
+}
+
+.menu-profile .main-profile .icon-profile{
+    width: 100%;
+    position: relative;
+}
+
+.menu-profile .main-profile .tittle-profile{
+    padding-left: 1rem;
+    font-size: 1.5rem;
+}
+
+
+.action-profile .menu-profile ul li{
+    list-style: none;
+    padding: 0.5rem;
+}
