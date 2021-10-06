@@ -1,0 +1,37 @@
+body {
+    margin: o;
+}
+
+.head {
+    width: 100vw;
+    height: 5vw;
+    display: flex;
+    border: 2px;
+    margin: 30px;
+    padding: auto;
+    font-size: 20px;
+}
+
+.container {
+    width: 100vw;
+    display: flex;
+    border: 2px;
+    margin: 30px;
+    justify-content: center;
+    padding: auto;
+}
+
+.container div {
+    display: flex;
+    border: 10px black;
+    text-align: center;
+    background: grey;
+    width: 300px;
+    height: 300px;
+    margin: 2px;
+}
+
+.row h2 {
+    color: rgb(51, 46, 46);
+    font-weight: bold;
+}
