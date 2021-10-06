@@ -16,7 +16,7 @@ class DashboardController extends Controller
             'profile' => 'img/profile.png',
             'telepon' => '0894572384',
             'job' => 'Project Manajer',
-            'nama' => 'Nabila',
+            'nama' => 'Nabil',
             'email' => 'nabila@gmail.com',
             'posts' => Dashboard::all()
         ]);
