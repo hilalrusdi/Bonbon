@@ -24,7 +24,7 @@ class UserFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
-            'nik' => $this->faker->unique()->nik(),
+            'NIK' => $this->faker->unique()->nik(),
             'born' => $this->faker->dateTimeInInterval('-20 years', '-10 years'),
             'no_hp' => $this->faker->phoneNumber(),
             'alamat' => $this->faker->address(),
