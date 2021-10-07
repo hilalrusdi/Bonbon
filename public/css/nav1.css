@@ -10,9 +10,17 @@
     --bg-secondary: #A2B29F;
     --bg-third: #BDD2B6;
     --bg-fourth: #F8EDE3;
-    --bg-onclick: #286155;
-    
+    --bg-onclick: #286155;  
 
+}
+
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(152, 152, 255);
+    border-radius: 10px;
 }
 
 body{
@@ -21,6 +29,8 @@ body{
     margin: 0;
     padding: 0;
 }
+
+
 
 main{
     margin-left: 5rem;

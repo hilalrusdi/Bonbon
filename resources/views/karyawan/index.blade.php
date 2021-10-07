@@ -19,24 +19,17 @@
                 </tr>
             </thead>
             <tbody class="tbody_karyawan">
-                <tr class="tr_karyawan">
-                    <td>1</td>
-                    <td>Hilal</td>
-                    <td>3515008</td>
-                    <td>31/08/2001</td>
-                    <td>089457234</td>
-                    <td>Sda</td>
-                    <td>08/09/2020</td>
-                </tr>
-                <tr class="tr_karyawan">
-                    <td>1</td>
-                    <td>Hilal</td>
-                    <td>3515008</td>
-                    <td>31/08/2001</td>
-                    <td>089457234</td>
-                    <td>Sda</td>
-                    <td>08/09/2020</td>
-                </tr>
+                @foreach ($users as $user)
+                    <tr class="tr_karyawan">
+                        <td>{{ $user->id }}</td>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->NIK }}</td>
+                        <td>{{ $user->born }}</td>
+                        <td>{{ $user->no_hp }}</td>
+                        <td>{{ $user->alamat }}</td>
+                        <td>{{ $user->tgl_kerja }}</td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

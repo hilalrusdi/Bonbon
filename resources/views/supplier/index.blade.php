@@ -2,6 +2,32 @@
 
 @section('container')
 
-    <h1><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">buat mas haidar</a></h1>
-    <img src="img/gambar.jpg" alt="">
+    <div class="card_table">
+        <h1 class="tittle_table">Tabel Supplier</h1>
+        <table class="tabel_karyawan">
+            <thead class="thead_karyawan">
+                <tr class="tr_karyawan">
+                    <th>Nomor</th>
+                    <th>Company</th>
+                    <th>Person In Charge</th>
+                    <th>Nomor Hp</th>
+                    <th>Alamat</th>
+                    <th>Tanggal Gabung</th>
+                </tr>
+            </thead>
+            <tbody class="tbody_karyawan">
+                @foreach ($suppliers as $supplier)
+                    <tr class="tr_karyawan">
+                        <td>{{ $supplier->id }}</td>
+                        <td>{{ $supplier->company }}</td>
+                        <td>{{ $supplier->name }}</td>
+                        <td>{{ $supplier->no_hp }}</td>
+                        <td>{{ $supplier->alamat }}</td>
+                        <td>{{ $supplier->tgl_join }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+
 @endsection

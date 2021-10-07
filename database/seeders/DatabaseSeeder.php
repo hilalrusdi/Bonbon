@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\User;
+use App\Models\Supplier;
 
 class DatabaseSeeder extends Seeder
 {
@@ -25,5 +26,7 @@ class DatabaseSeeder extends Seeder
             'alamat' => 'sidoarjo',
             'tgl_kerja' => '2008-09-24'
         ]);
+
+        Supplier::factory(5)->create();
     }
 }

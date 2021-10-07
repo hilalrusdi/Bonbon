@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\Supplier;
 
 class SupplierController extends Controller
 {
@@ -13,10 +15,7 @@ class SupplierController extends Controller
             'active' => 'supplier',
             'image' => 'img/bonbon.jpg',
             'profile' => 'img/user.png',
-            'telepon' => '0894572384',
-            'job' => 'Project Manajer',
-            'nama' => 'Nabila',
-            'email' => 'nabila@gmail.com'
+            'suppliers' => Supplier::all()
         ]);
     }
 }

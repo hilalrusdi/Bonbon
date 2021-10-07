@@ -1,5 +1,5 @@
 .card_table{
-    margin-left: 8rem;
+    margin-left: 3rem;
 }
 
 .tittle_table{
@@ -10,9 +10,10 @@
 
 .tabel_karyawan{
     border-collapse: collapse;
-    margin: 2.5rem 0;
+    margin: 8rem 0;
     font-size: 1.5em;
     min-width: 70rem;
+    max-width: 118rem;
     border-radius: 5px 5px 0 0;
     overflow: hidden;
     box-shadow: 0 0 20px rgb(206, 206, 206);
