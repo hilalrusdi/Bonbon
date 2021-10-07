@@ -54,12 +54,20 @@
                 </a>
             </li>
 
-            <li class="nav-item">
+            <!-- <li class="nav-item">
+                <form action="">
+                    <button type="submit" class="nav-link btn-1">
+                        <span class="nav-icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                        <span class="nav-tittle">Log Out</span>
+                    </button>
+                </form>
                 <a class="nav-link" href="">
                     <span class="nav-icon"><ion-icon name="log-out-outline"></ion-icon></span>
                     <span class="nav-tittle">Log Out</span>
                 </a>
-            </li>
+                    
+                
+            </li> -->
 
         </ul>     
     </nav>

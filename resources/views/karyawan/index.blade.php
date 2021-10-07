@@ -3,6 +3,9 @@
 @section('container')
     <div class="card_table">
         <h1 class="tittle_table">Tabel Karyawan</h1>
+        @if(session()->has('success'))
+            @include('partial.alert')
+        @endif
         <table class="tabel_karyawan">
             <thead class="thead_karyawan">
                 <tr class="tr_karyawan">

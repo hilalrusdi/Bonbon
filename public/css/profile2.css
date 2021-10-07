@@ -15,6 +15,7 @@
     right: 2rem;
 }
 
+
 .action-profile .profile{
     position: relative;
     width: 4rem;
@@ -22,6 +23,7 @@
     border-radius: 50%;
     overflow: hidden;
     cursor: pointer;
+    transition: ease-in-out 0.3s;
 }
 
 .action-profile .profile img{
@@ -33,13 +35,21 @@
     object-fit:cover;
 }
 
+.action-profile .profile:hover{
+    width: 5rem;
+    height: 5rem;
+    position: relative;
+}
+
+
+
 .action-profile .menu-profile{
     position: absolute;
     top: 6rem;
     right: -0.8rem;
     padding: 0.8rem 2.4rem;
     background: #BDD2B6;
-    width: 20rem;
+    width: 30rem;
     border-radius: 15px;
     box-sizing: 0 0.6rem 2rem black;
     transition: 0.5s;
@@ -57,6 +67,11 @@
     width: 100%;
     text-align: center;
     position: relative;
+}
+
+.action-profile .menu-profile .identity .img-profile{
+    width: 10vh;
+    border-radius: 100%;
 }
 
 .action-profile .menu-profile::before{
@@ -96,4 +111,45 @@ h2{
 .action-profile .menu-profile ul li{
     list-style: none;
     padding: 0.5rem;
+    border-bottom: 1px solid #7e8024;
+}
+
+
+.action-profile .menu-profile ul li:last-of-type{
+    border-bottom: none;
+}
+
+.btn-1{
+    margin-top: 2rem;
+}
+
+.dropdown{
+    border: none;
+    background-color: rgb(65, 221, 143);
+    font-size: 1rem;
+    margin-top: 10rem;
+    font-family: 'Poppins';
+    width: 40%;
+    height: 3.5rem;
+    right: -18rem;
+    position: relative;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: ease 0.2s;
+}
+
+.dropdown:hover{
+    background-color: rgb(64, 134, 77);
+    color: white;
+}
+
+.dropdown ion-icon{
+    padding-right: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.dropdown span{
+    text-align: center;
+    align-items: center;
+    font-size: 1.3rem;
 }

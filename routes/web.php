@@ -38,17 +38,18 @@ Route::get('/navbar', function () {
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('/dashboard',[DashboardController::class, 'index']);
+Route::get('/dashboard',[DashboardController::class, 'index'])->middleware('auth');
 
 Route::get('/registration',[RegistrationController::class, 'index']);
 Route::post('/registration',[RegistrationController::class, 'store']);
 
-Route::get('/tanaman',[TanamanController::class, 'index']);
+Route::get('/tanaman',[TanamanController::class, 'index'])->middleware('auth');
 
-Route::get('/karyawan',[KaryawanController::class, 'index']);
+Route::get('/karyawan',[KaryawanController::class, 'index'])->middleware('auth');
 
-Route::get('/supplier',[SupplierController::class, 'index']);
+Route::get('/supplier',[SupplierController::class, 'index'])->middleware('auth');
 
 
 

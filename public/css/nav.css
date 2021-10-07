@@ -59,9 +59,9 @@ ion-icon{
     font-size: 2em;
 }
 
-.nav-item:last-child{
+/* .nav-item:last-child{
     margin-top: auto;
-}
+} */
 
 .nav-link{
     display: flex;
@@ -93,6 +93,12 @@ ion-icon{
     background: var(--bg-onclick);
     color: var(--text-secondary);
 }
+
+/* .btn-1{
+    border: none;
+    background-color: var(--bg-primary);
+    color: var(--text-third);
+} */
 
 .logo-link:hover{
     filter: grayscale(0%);

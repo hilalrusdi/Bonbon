@@ -4,17 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/nav1.css">
-    <link rel="stylesheet" href="css/profile.css">
-    <link rel="stylesheet" href="css/alert.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/profile2.css">
+    <link rel="stylesheet" href="css/alert1.css">
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="css/table.css">
     <title>{{$tittle}} | Bonbon</title>
 </head>
 <body>
-    @if(session()->has('success'))
-        @include('partial.alert')
-    @endif
     @include('partial.profile')
     @include('partial.navbar')
     <main>

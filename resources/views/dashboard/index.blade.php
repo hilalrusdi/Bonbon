@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('container')
-    <h1>haloo saya nabilaa</h1>
+    <h1>Welcome {{ auth()->user()->name }}</h1>
 
 
       <div class="head">
