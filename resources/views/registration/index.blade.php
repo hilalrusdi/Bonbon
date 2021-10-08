@@ -1,6 +1,6 @@
-@extends('layout.user')
+@extends('layout.reg')
 
-        @section('user')
+        @section('reg')
         <div class="container_reg">
             <div class="tittle_reg">Tambah Karyawan</div>
             <form action="/registration" method="post">

@@ -4,6 +4,17 @@
 
     <div class="card_table">
         <h1 class="tittle_table">Tabel Supplier</h1>
+        @if(session()->has('success'))
+            @include('partial.alert')
+        @endif
+        <div class="tambah_akun">
+            <form action="/supplier/tambah">
+            @csrf
+            <button type="submit" class="btn-tambah">
+                <span>Tambah Akun</span>
+            </button>
+            </form>
+        </div>
         <table class="tabel_karyawan">
             <thead class="thead_karyawan">
                 <tr class="tr_karyawan">

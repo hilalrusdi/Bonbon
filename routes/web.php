@@ -50,6 +50,8 @@ Route::get('/tanaman',[TanamanController::class, 'index'])->middleware('auth');
 Route::get('/karyawan',[KaryawanController::class, 'index'])->middleware('auth');
 
 Route::get('/supplier',[SupplierController::class, 'index'])->middleware('auth');
+Route::get('/supplier/tambah',[SupplierController::class, 'show'])->middleware('auth');
+Route::post('/supplier/tambah',[SupplierController::class, 'store']);
 
 
 
