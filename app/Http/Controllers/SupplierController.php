@@ -15,6 +15,7 @@ class SupplierController extends Controller
             'active' => 'supplier',
             'image' => 'img/bonbon.jpg',
             'profile' => 'img/user.png',
+            'css' => 'css/whyy.css',
             'suppliers' => Supplier::all()
         ]);
     }
@@ -26,6 +27,7 @@ class SupplierController extends Controller
             'active' => 'tambah',
             'image' => 'img/bonbon.jpg',
             'profile' => 'img/user.png',
+            'css' => 'css/whyy.css',
             'suppliers' => Supplier::all()
         ]);
     }

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/aw.css">
-    <title>Apa ini???</title>
+    <title>{{ $tittle }}</title>
 </head>
 <body>
     <form class="box" action="/login" method="post">

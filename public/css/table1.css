@@ -1,0 +1,86 @@
+.card_table{
+    margin-left: 3rem;
+}
+
+.tittle_table{
+    font-size: 2.5rem;
+    color: rgb(64, 67, 68);
+    text-shadow: 0 0 10px rgb(214, 214, 214);
+}
+
+.tambah_akun{
+    margin-top: 8rem;
+    font-size: 12px;
+    padding-bottom: 2rem;
+    
+    width: 20vh;
+}
+
+.tambah_akun a{
+    text-decoration: none;
+    background-color: greenyellow;
+}
+
+.btn-tambah{
+    border: none;
+    background-color: rgb(158, 188, 202);
+    font-size: 1rem;
+    font-family: 'Poppins';
+    width: 100%;
+    height: 3.5rem;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: ease 0.2s;
+}
+
+.btn-tambah:hover{
+    background-color: rgb(57, 105, 168);
+    color: wheat;
+}
+
+.content_karyawan{
+    width: 95%;
+    padding-bottom: 5rem;
+}
+
+.tabel_karyawan{
+    position: static;
+    border-collapse: collapse;
+    font-size: 1.5em;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgb(206, 206, 206);
+}
+
+.tabel_karyawan .thead_karyawan .tr_karyawan{
+    background-color: #009879;
+    color: rgb(232, 233, 214);
+    text-align: left;
+    font-weight: bold;
+    
+}
+
+.tabel_karyawan th,
+.tabel_karyawan td{
+    padding: 1rem 1.5rem;
+}
+
+.tabel_karyawan .tbody_karyawan .tr_karyawan{
+    border-bottom: 1px solid #dddddd;
+}
+
+.tabel_karyawan .tbody_karyawan .tr_karyawan:hover{
+    background-color: #cececef3;
+}
+
+.tabel_karyawan .tbody_karyawan .tr_karyawan:nth-of-type(even){
+    background-color: #f3f3f3f3;
+}
+
+.tabel_karyawan .tbody_karyawan .tr_karyawan:nth-of-type(even):hover{
+    background-color: #cececef3;
+}
+
+.tabel_karyawan .tbody_karyawan .tr_karyawan:last-of-type{
+    border-bottom: 2px solid rgb(127, 110, 161);
+}

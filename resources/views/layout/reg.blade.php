@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <link rel="stylesheet" href="css/supplier.css">
     <title>{{$tittle}} | Bonbon</title>
+    @include('partial.css')
 </head>
 <body>
                 

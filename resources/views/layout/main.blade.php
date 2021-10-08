@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/profile2.css">
     <link rel="stylesheet" href="css/alert.css">
     <link rel="stylesheet" href="css/dashboard.css">
-    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href= "{{ $css }}">
     <title>{{$tittle}} | Bonbon</title>
 </head>
 <body>

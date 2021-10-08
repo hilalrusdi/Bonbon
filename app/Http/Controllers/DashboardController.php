@@ -18,6 +18,7 @@ class DashboardController extends Controller
             'job' => 'Project Manajer',
             'nama' => 'Nabila',
             'email' => 'nabila@gmail.com',
+            'css' => 'css/table1.css',
             'posts' => Dashboard::all()
         ]);
     }

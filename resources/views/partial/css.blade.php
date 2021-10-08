@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
 
 :root{
     font-size: 13px;
@@ -111,3 +112,4 @@ form .button input{
 form .button input:hover{
     background: rgb(97, 97, 255);
 }
+    </style>

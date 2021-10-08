@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <link href="{{ asset('css/what.css') }}" rel="stylesheet" type="text/css" >
-    <title>{{$tittle}} | Bonbon</title>
-</head>
-    <body>
+@extends('layout.reg')
+
+        @section('reg')
 
         <div class="container_reg" >
             <div class="tittle_reg">Tambah Data</div>
-            <form action="/supplier/reg" method="post">
+            <form action="/supplier/tambah" method="post">
                 @csrf
                 <div class="user_reg">
                     <div class="input_reg">
@@ -42,7 +35,5 @@
             </form>
         
         </div>
+        @endsection
                         
-            
-    </body>
-</html>

@@ -4,10 +4,11 @@
 
     <div class="card_table">
         <h1 class="tittle_table">Tabel Supplier</h1>
+        <div class="tambah_akun">
         @if(session()->has('success'))
             @include('partial.alert')
         @endif
-        <div class="tambah_akun">
+        
             <form action="/supplier/tambah">
             @csrf
             <button type="submit" class="btn-tambah">

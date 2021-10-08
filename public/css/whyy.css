@@ -38,13 +38,13 @@
     color: wheat;
 }
 
-.content_karyawan{
-    width: 90%;
+/* .content_karyawan{
     padding-bottom: 5rem;
-}
+} */
 
 .tabel_karyawan{
-    position: static;
+    width: 95%;
+    /* position: relative; */
     border-collapse: collapse;
     font-size: 1.5em;
     border-radius: 5px 5px 0 0;

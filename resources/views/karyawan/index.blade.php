@@ -1,12 +1,14 @@
 @extends('layout.main')
 
 @section('container')
+
     <div class="card_table">
         <h1 class="tittle_table">Tabel Karyawan</h1>
+        <div class="tambah_akun">
         @if(session()->has('success'))
             @include('partial.alert')
         @endif
-        <div class="tambah_akun">
+        
             <form action="/registration">
             @csrf
             <button type="submit" class="btn-tambah">

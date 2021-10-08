@@ -14,6 +14,7 @@ class KaryawanController extends Controller
             'active' => 'karyawan',
             'image' => 'img/bonbon.jpg',
             'profile' => 'img/user.png',
+            'css' => 'css/table1.css',
             'users' => User::all()
         ]);
     }

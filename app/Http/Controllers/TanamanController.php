@@ -13,10 +13,7 @@ class TanamanController extends Controller
             'active' => 'tanaman',
             'image' => 'img/bonbon.jpg',
             'profile' => 'img/user.png',
-            'telepon' => '0894572384',
-            'job' => 'Project Manajer',
-            'nama' => 'Nabila',
-            'email' => 'nabila@gmail.com'
+            'css' => 'css/table.css',
         ]);
     }
 }
