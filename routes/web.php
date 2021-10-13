@@ -8,6 +8,7 @@ use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\TanamanController;
 use App\Http\Controllers\TransaksiController;
+use App\Models\Transaksi;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,8 @@ Route::get('/navbar', function () {
 });
 
 
+
+
 Route::get('/', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
@@ -51,6 +54,7 @@ Route::post('/tanaman/tambah',[TanamanController::class, 'store']);
 
 
 Route::get('/transaksi',[TransaksiController::class, 'index'])->middleware('auth');
+Route::get('/detail/{slug}', [TransaksiController::class, 'detail'])->middleware('auth');
 Route::get('/transaksi/tambah',[TransaksiController::class, 'show'])->middleware('auth');
 Route::post('/transaksi/tambah',[TransaksiController::class, 'store']);
 

@@ -8,7 +8,7 @@
                 @csrf
                 <div class="user_reg">
                     <div class="input_reg">
-                        <span class="detail">Nama </span>
+                        <span class="detail">Nama Pembeli</span>
                         <input type="text" name="nama" id="nama" value="{{old('nama')}}" required> 
                     </div>
                     <div class="input_reg">
@@ -30,6 +30,22 @@
                     <div class="input_reg">
                         <span class="detail">Total </span>
                         <input type="text" name="total" id="total" value="{{old('total')}}" required>
+                    </div>
+                    <div class="input_reg">
+                        <span class="detail">Company </span>
+                        <select name="supplier_id" id="supplier_id">
+                            @foreach ($supplier as $data)
+                            <option value="{{ $data->id }}">{{ $data->company }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="input_reg">
+                        <span class="detail">Tanaman </span>
+                        <select name="tanaman_id" id="tanaman_id">
+                            @foreach ($tanaman as $data)
+                            <option value="{{ $data->id }}">{{ $data->nama }}</option>
+                            @endforeach
+                        </select>
                     </div>
                     
                 </div>

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Transaksi;
+use App\Models\Supplier;
+use App\Models\Tanaman;
 use Illuminate\Http\Request;
 
 class TransaksiController extends Controller
@@ -10,24 +12,45 @@ class TransaksiController extends Controller
     public function index()
     {
         return view('transaksi.index', [
-            'tittle' => 'Transaksi',
-            'active' => 'transaksi',
-            'image' => 'img/bonbon.jpg',
-            'profile' => 'img/user.png',
-            'css' => 'css/whyy.css',
-            'transaksis' => Transaksi::all()
+            "tittle" => "Transaksi",
+            "active" => "transaksi",
+            "image" => "img/bonbon.jpg",
+            "profile" =>  'user.png',
+            "css" => "css/whyy.css",
+            "transaksis" => Transaksi::all(),
+            "supplier" => Supplier::all(),
+            "tanaman" => Tanaman::all(),
+            
+        ]);
+    }
+
+    public function detail($slug)
+    {
+        return view('detail', [
+            "tittle" => "Detail Transaksi",
+            "active" => "detail transaksi",
+            "image" => "img/bonbon.jpg",
+            "profile" => 'user.png',
+            "css" => "css/whyy.css",
+            "transaksis" => Transaksi::find($slug),
+            "supplier" => Supplier::all(),
+            "tanaman" => Tanaman::all(),
+            
         ]);
     }
 
     public function show()
     {
         return view('transaksi.tambah.index', [
-            'tittle' => 'Transaksi',
-            'active' => 'tambah',
-            'image' => 'img/bonbon.jpg',
-            'profile' => 'img/user.png',
-            'css' => 'css/whyy.css',
-            'transaksis' => Transaksi::all()
+            "tittle" => "Transaksi",
+            "active" => "tambah",
+            "image" => "img/bonbon.jpg",
+            "profile" => "user.png",
+            "css" => "css/whyy.css",
+            "transaksis" => Transaksi::all(),
+            "supplier" => Supplier::all(),
+            "tanaman" => Tanaman::all(),
+
         ]);
     }
 

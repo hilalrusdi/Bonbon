@@ -6,8 +6,8 @@
             <li class="nav-logo border">
                 <a class="logo-link" href="">
                     <!-- <span class="logo">BONBON</span> -->
-                    <img class="bonbon" src="img/a.png" alt="">
-                    <span class="logo-tittle"><img class="bobon2" src="img/text.jpg" alt=""></span>
+                    <img class="bonbon" src="{{ url('a.png') }}" alt="">
+                    <span class="logo-tittle"><img class="bobon2" src="{{ url('text.jpg') }}" alt=""></span>
                     
                 </a>
             </li>

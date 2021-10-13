@@ -15,8 +15,9 @@ class CreateTanamenTable extends Migration
     {
         Schema::create('tanamen', function (Blueprint $table) {
             $table->id();
+            // $table->string('slug')->unique();
             $table->string('nama');
-            $table->string('spesies')->unique();
+            $table->string('spesies');
             $table->string('asal');
             $table->string('alamat');
             $table->timestamps();

@@ -13,7 +13,7 @@ class TanamanController extends Controller
             'tittle' => 'Tanaman',
             'active' => 'tanaman',
             'image' => 'img/bonbon.jpg',
-            'profile' => 'img/user.png',
+            'profile' =>  'user.png',
             'css' => 'css/whyy.css',
             'tanamen' => Tanaman::all()
         ]);
@@ -25,7 +25,7 @@ class TanamanController extends Controller
             'tittle' => 'Tanaman',
             'active' => 'tambah',
             'image' => 'img/bonbon.jpg',
-            'profile' => 'img/user.png',
+            'profile' => 'user.png',
             'css' => 'css/whyy.css',
             'tanamen' => Tanaman::all()
         ]);
@@ -33,6 +33,7 @@ class TanamanController extends Controller
 
     public function store(Request $request)
     {
+
         $validatedData = $request->validate([
             'nama' => 'required',
             'spesies' => 'required|unique:tanamen',

@@ -25,7 +25,7 @@ class TransaksiFactory extends Factory
             'nama' => $this->faker->name(),
             'tgl' => $this->faker->dateTimeThisYear(),
             'no_hp' => $this->faker->phoneNumber(),
-            'status' => $this->faker->text(),
+            'status' => $this->faker->word(),
             'ket' => $this->faker->text(),
             'total' => $this->faker->numberBetween($min = 1000, $max = 10000),
 

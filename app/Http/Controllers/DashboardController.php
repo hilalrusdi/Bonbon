@@ -13,7 +13,7 @@ class DashboardController extends Controller
             'tittle' => 'Dashboard',
             'active' => 'dashboard',
             'image' => 'img/bonbon.jpg',
-            'profile' => 'img/user.png',
+            'profile' => 'user.png',
             'telepon' => '0894572384',
             'job' => 'Project Manajer',
             'nama' => 'Nabila',

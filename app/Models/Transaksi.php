@@ -18,11 +18,17 @@ class Transaksi extends Model
         'total',
     ];
 
+    
+
     public function supplier(){
         return $this->belongsTo(Supplier::class);
     }
 
     public function tanaman(){
         return $this->belongsTo(Tanaman::class);
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 }

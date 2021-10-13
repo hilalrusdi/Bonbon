@@ -24,7 +24,7 @@ class TanamanFactory extends Factory
     {
         return [
             'nama' => $this->faker->name(),
-            'spesies' => $this->faker->unique()->company(),
+            'spesies' => $this->faker->company(),
             'asal' => $this->faker->country(),
             'alamat' => $this->faker->address(),
         ];

@@ -1,10 +1,10 @@
 <div class="action-profile">
     <div class="profile" onclick="menuToggle();">
-        <img src="{{$profile}}" alt="">
+        <img src="{{ url($profile) }}" alt="">
     </div>
     <div class="menu-profile">
         <div class="identity">
-            <img class="img-profile" src="{{$profile}}" alt="">
+            <img class="img-profile" src="{{ url('user.png') }}" alt="">
             <h1>{{ auth()->user()->name }}</h1>
             <h2>{{ auth()->user()->NIK }}</h2>
         </div>

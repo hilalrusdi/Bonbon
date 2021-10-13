@@ -20,7 +20,7 @@
             <thead class="thead_karyawan">
                 <tr class="tr_karyawan">
                     <th>Nomor</th>
-                    <th>Nama</th>
+                    <th>Nama Pembeli</th>
                     <th>Tanggal Bayar</th>
                     <th>No Hp</th>
                     <th>Status Pembayaran</th>
@@ -28,20 +28,22 @@
                     <th>Total Pembayaran</th>
                     <th>Id Tanaman</th>
                     <th>Id Supplier</th>
+                    <th>Use</th>
                 </tr>
             </thead>
             <tbody class="tbody_karyawan">
                 @foreach ($transaksis as $data)
                         <tr class="tr_karyawan">
-                            <td>{{ $data->id }}</td>
+                            <td>{{ $data->id }} </td>
                             <td>{{ $data->nama }}</td>
                             <td>{{ $data->tgl }}</td>
                             <td>{{ $data->no_hp }}</td>
                             <td>{{ $data->status }}</td>
                             <td>{{ $data->ket }}</td>
                             <td>{{ $data->total }}</td>
-                            <td>{{ $data->tanaman->id }}</td>
-                            <td>{{ $data->supplier->id }}</td>
+                            <td>{{ $data->tanaman_id }}</td>
+                            <td>{{ $data->supplier_id }}</td>
+                            <td><a href="/detail/{{ $data["id"] }}">lihat</a></td>
                         </tr>
                 @endforeach
             </tbody>

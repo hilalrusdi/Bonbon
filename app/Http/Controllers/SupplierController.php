@@ -14,7 +14,7 @@ class SupplierController extends Controller
             'tittle' => 'Supplier',
             'active' => 'supplier',
             'image' => 'img/bonbon.jpg',
-            'profile' => 'img/user.png',
+            'profile' =>  'user.png',
             'css' => 'css/whyy.css',
             'suppliers' => Supplier::all()
         ]);
@@ -26,7 +26,7 @@ class SupplierController extends Controller
             'tittle' => 'Supplier',
             'active' => 'tambah',
             'image' => 'img/bonbon.jpg',
-            'profile' => 'img/user.png',
+            'profile' => 'user.png',
             'css' => 'css/whyy.css',
             'suppliers' => Supplier::all()
         ]);
