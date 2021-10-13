@@ -41,14 +41,14 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link {{ ($tittle === 'Transaksi') ? 'point' : '' }}" href="/transaksi">
                     <span class="nav-icon"><ion-icon name="cash-outline"></ion-icon></span>
                     <span class="nav-tittle">Transaksi</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link {{ ($tittle === 'Quality') ? 'point' : '' }}" href="/quality">
                     <span class="nav-icon"><ion-icon name="bag-check-outline"></ion-icon></span>
                     <span class="nav-tittle">Quality Check</span>
                 </a>

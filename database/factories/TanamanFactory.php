@@ -2,18 +2,18 @@
 
 namespace Database\Factories;
 
-use App\Models\Supplier;
+use App\Models\Tanaman;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
-class SupplierFactory extends Factory
+class TanamanFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Supplier::class;
+    protected $model = Tanaman::class;
 
     /**
      * Define the model's default state.
@@ -23,11 +23,10 @@ class SupplierFactory extends Factory
     public function definition()
     {
         return [
-            'company' => $this->faker->unique()->company(),
-            'name' => $this->faker->name(),
-            'no_hp' => $this->faker->phoneNumber(),
+            'nama' => $this->faker->name(),
+            'spesies' => $this->faker->unique()->company(),
+            'asal' => $this->faker->country(),
             'alamat' => $this->faker->address(),
-            'tgl_join' => $this->faker->dateTimeThisYear(),
         ];
     }
 }

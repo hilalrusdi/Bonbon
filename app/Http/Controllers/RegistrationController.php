@@ -19,7 +19,7 @@ class RegistrationController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|max:255',
-            'nik' => 'required|unique:users',
+            'nik' => 'required|unique:users|max:16',
             'born' => 'required',
             'no_hp' => 'required',
             'alamat' => 'required',

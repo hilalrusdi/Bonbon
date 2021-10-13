@@ -5,21 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Supplier extends Model
+class Tanaman extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'company',
-        'name',
-        'no_hp',
+        'nama',
+        'spesies',
+        'asal',
         'alamat',
-        'tgl_join',
     ];
 
     public function transaksi(){
-        return $this->hasMany(Transaksi::class);
+        return $thin->hasMany(Transaksi::class);
     }
-
-    
 }

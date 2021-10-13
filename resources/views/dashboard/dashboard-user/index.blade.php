@@ -5,7 +5,7 @@
 
 
       <div class="head">
-            <h1>Dashboard Page</h1>
+            <h1>Dashboard Page as User</h1>
       </div>
       <div class="row justify-content-center">
             <div class="col-2  mb-3">

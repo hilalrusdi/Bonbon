@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Supplier;
+use App\Models\Tanaman;
+use App\Models\Transaksi;
 
 class DatabaseSeeder extends Seeder
 {
@@ -24,9 +26,26 @@ class DatabaseSeeder extends Seeder
             'born' => '31 agustus 2001',
             'no_hp' => '0826347263',
             'alamat' => 'sidoarjo',
-            'tgl_kerja' => '2008-09-24'
+            'tgl_kerja' => '2008-09-24',
+        ]);
+
+        Transaksi::create([
+            'supplier_id' => '1',
+            'tanaman_id' => '2',
+            'nama' => 'haloo',
+            'tgl' => '2021-12-01',
+            'no_hp' => '0895635',
+            'status' => 'lunas',
+            'ket' => 'wow',
+            'total' => '50000',
         ]);
 
         Supplier::factory(5)->create();
+
+        Tanaman::factory(5)->create();
+
+        // Transaksi::factory(5)->create();
+
+        // $this->call(LaratrustSeeder::class);
     }
 }

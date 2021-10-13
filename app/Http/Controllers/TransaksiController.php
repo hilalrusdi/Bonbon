@@ -2,32 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Transaksi;
 use Illuminate\Http\Request;
-use App\Models\Tanaman;
 
-class TanamanController extends Controller
+class TransaksiController extends Controller
 {
     public function index()
     {
-        return view('tanaman.index', [
-            'tittle' => 'Tanaman',
-            'active' => 'tanaman',
+        return view('transaksi.index', [
+            'tittle' => 'Transaksi',
+            'active' => 'transaksi',
             'image' => 'img/bonbon.jpg',
             'profile' => 'img/user.png',
             'css' => 'css/whyy.css',
-            'tanamen' => Tanaman::all()
+            'transaksis' => Transaksi::all()
         ]);
     }
 
     public function show()
     {
-        return view('tanaman.tambah.index', [
-            'tittle' => 'Tanaman',
+        return view('transaksi.tambah.index', [
+            'tittle' => 'Transaksi',
             'active' => 'tambah',
             'image' => 'img/bonbon.jpg',
             'profile' => 'img/user.png',
             'css' => 'css/whyy.css',
-            'tanamen' => Tanaman::all()
+            'transaksis' => Transaksi::all()
         ]);
     }
 
@@ -35,16 +35,18 @@ class TanamanController extends Controller
     {
         $validatedData = $request->validate([
             'nama' => 'required',
-            'spesies' => 'required|unique:tanamen',
-            'asal' => 'required',
-            'alamat' => 'required',
+            'tgl' => 'required',
+            'no_hp' => 'required',
+            'status' => 'required',
+            'ket' => 'required',
+            'total' => 'required',
 
             
         ]);
 
-        Tanaman::create($validatedData);
+        Transaksi::create($validatedData);
         $request->session()->flash('success', 'Berhasil menambah data!');
-        return redirect('/tanaman');
+        return redirect('/transaksi');
         
     }
 }

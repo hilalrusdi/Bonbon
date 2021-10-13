@@ -2,18 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Supplier;
+use App\Models\Transaksi;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 
-class SupplierFactory extends Factory
+class TransaksiFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Supplier::class;
+    protected $model = Transaksi::class;
 
     /**
      * Define the model's default state.
@@ -23,11 +22,13 @@ class SupplierFactory extends Factory
     public function definition()
     {
         return [
-            'company' => $this->faker->unique()->company(),
-            'name' => $this->faker->name(),
+            'nama' => $this->faker->name(),
+            'tgl' => $this->faker->dateTimeThisYear(),
             'no_hp' => $this->faker->phoneNumber(),
-            'alamat' => $this->faker->address(),
-            'tgl_join' => $this->faker->dateTimeThisYear(),
+            'status' => $this->faker->text(),
+            'ket' => $this->faker->text(),
+            'total' => $this->faker->numberBetween($min = 1000, $max = 10000),
+
         ];
     }
 }

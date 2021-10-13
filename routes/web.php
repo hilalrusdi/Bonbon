@@ -7,6 +7,7 @@ use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\TanamanController;
+use App\Http\Controllers\TransaksiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,13 +40,24 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/dashboard',[DashboardController::class, 'index'])->middleware('auth');
+// Route::get('/dashboard',[DashboardController::class, 'admin'])->name('admin')->middleware('auth','CekLevel:admin');
 
 Route::get('/registration',[RegistrationController::class, 'index']);
 Route::post('/registration',[RegistrationController::class, 'store']);
 
 Route::get('/tanaman',[TanamanController::class, 'index'])->middleware('auth');
+Route::get('/tanaman/tambah',[TanamanController::class, 'show'])->middleware('auth');
+Route::post('/tanaman/tambah',[TanamanController::class, 'store']);
+
+
+Route::get('/transaksi',[TransaksiController::class, 'index'])->middleware('auth');
+Route::get('/transaksi/tambah',[TransaksiController::class, 'show'])->middleware('auth');
+Route::post('/transaksi/tambah',[TransaksiController::class, 'store']);
+
 
 Route::get('/karyawan',[KaryawanController::class, 'index'])->middleware('auth');
+
+
 
 Route::get('/supplier',[SupplierController::class, 'index'])->middleware('auth');
 Route::get('/supplier/tambah',[SupplierController::class, 'show'])->middleware('auth');

@@ -23,7 +23,7 @@ class SupplierController extends Controller
     public function show()
     {
         return view('supplier.tambah.index', [
-            'tittle' => 'Tambah Data',
+            'tittle' => 'Supplier',
             'active' => 'tambah',
             'image' => 'img/bonbon.jpg',
             'profile' => 'img/user.png',

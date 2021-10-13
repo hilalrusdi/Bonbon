@@ -4,28 +4,24 @@
 
         <div class="container_reg" >
             <div class="tittle_reg">Tambah Data {{ $tittle }}</div>
-            <form action="/supplier/tambah" method="post">
+            <form action="/tanaman/tambah" method="post">
                 @csrf
                 <div class="user_reg">
                     <div class="input_reg">
-                        <span class="detail">Company </span>
-                        <input type="text" name="company" id="company" value="{{old('company')}}" required> 
+                        <span class="detail">Nama </span>
+                        <input type="text" name="nama" id="nama" value="{{old('nama')}}" required> 
                     </div>
                     <div class="input_reg">
-                        <span class="detail"> Nama penanggung jawab </span>
-                        <input type="text" name="name" id="name" value="{{old('name')}}" required>
+                        <span class="detail"> Spesies </span>
+                        <input type="text" name="spesies" id="spesies" value="{{old('spesies')}}" required>
                     </div>
                     <div class="input_reg">
-                        <span class="detail">No. Handphone </span>
-                        <input type="text" name="no_hp" id="no_hp" value="{{old('no_hp')}}" required>
+                        <span class="detail">Asal</span>
+                        <input type="text" name="asal" id="asal" value="{{old('asal')}}" required>
                     </div>
                     <div class="input_reg">
                         <span class="detail">Alamat </span>
                         <input type="text" name="alamat" id="alamat" value="{{old('alamat')}}" required>
-                    </div>
-                    <div class="input_reg">
-                        <span class="detail">Tanggal Bergabung </span>
-                        <input type="date" name="tgl_join" id="tgl_join" value="{{old('tgl_join')}}" required>
                     </div>
                     
                 </div>

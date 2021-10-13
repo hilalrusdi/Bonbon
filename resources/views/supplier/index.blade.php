@@ -19,7 +19,7 @@
         <table class="tabel_karyawan">
             <thead class="thead_karyawan">
                 <tr class="tr_karyawan">
-                    <th>Nomor</th>
+                    <th>ID</th>
                     <th>Company</th>
                     <th>Person In Charge</th>
                     <th>Nomor Hp</th>
