@@ -18,6 +18,20 @@ class Transaksi extends Model
         'total',
     ];
 
+
+    public function scopeFilter($query, array $filters)
+    {
+
+        $query->when($filters['search'] ?? false, function($query, $search){
+            return $query->where('nama', 'like', '%' . $search . '%')
+                    ->orWhere('tgl', 'like', '%' . $search . '%')
+                    ->orWhere('status', 'like', '%' . $search . '%')
+                    ->orWhere('ket', 'like', '%' . $search . '%')
+                    ->orWhere('total', 'like', '%' . $search . '%');
+        });
+
+    }
+
     
 
     public function supplier(){

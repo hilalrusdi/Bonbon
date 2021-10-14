@@ -30,6 +30,19 @@ class User extends Authenticatable
         'password',
     ];
 
+    public function scopeFilter($query, array $filters)
+    {
+
+        $query->when($filters['search'] ?? false, function($query, $search){
+            return $query->where('name', 'like', '%' . $search . '%')
+                    ->orWhere('nik', 'like', '%' . $search . '%')
+                    ->orWhere('no_hp', 'like', '%' . $search . '%')
+                    ->orWhere('alamat', 'like', '%' . $search . '%')
+                    ->orWhere('tgl_kerja', 'like', '%' . $search . '%');
+        });
+
+    }
+
     // protected $guarded =['id'];
 
     /**

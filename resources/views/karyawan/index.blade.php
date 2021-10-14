@@ -1,7 +1,10 @@
 @extends('layout.main')
 
 @section('container')
+    
 
+    @if ($users->count())
+    
     <div class="card_table">
         <h1 class="tittle_table">Tabel Karyawan</h1>
         <div class="tambah_akun">
@@ -9,12 +12,16 @@
             @include('partial.alert')
         @endif
         
-            <form action="/registration">
-            @csrf
-            <button type="submit" class="btn-tambah">
-                <span>Tambah Akun</span>
-            </button>
-            </form>
+            <div class="flexbox">
+                <form action="/registration" class="">
+                    @csrf
+                    <button type="submit" class="btn-tambah flex">
+                        <span>Tambah Akun</span>
+                    </button>
+                </form>
+                @include('partial.search')
+            </div>
+
         </div>
         <div class="content_karyawan">
             <table class="tabel_karyawan">
@@ -45,5 +52,8 @@
             </table>
         </div>
     </div>
-    
+    @else
+    <h1 class="tittle_table">Page not Found</h1>
+    @endif
+
 @endsection

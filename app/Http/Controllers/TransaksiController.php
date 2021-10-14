@@ -17,7 +17,7 @@ class TransaksiController extends Controller
             "image" => "img/bonbon.jpg",
             "profile" =>  'user.png',
             "css" => "css/whyy.css",
-            "transaksis" => Transaksi::all(),
+            "transaksis" => Transaksi::latest()->filter(request(['search']))->get(),
             "supplier" => Supplier::all(),
             "tanaman" => Tanaman::all(),
             

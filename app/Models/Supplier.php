@@ -17,6 +17,19 @@ class Supplier extends Model
         'tgl_join',
     ];
 
+    public function scopeFilter($query, array $filters)
+    {
+
+        $query->when($filters['search'] ?? false, function($query, $search){
+            return $query->where('company', 'like', '%' . $search . '%')
+                    ->orWhere('name', 'like', '%' . $search . '%')
+                    ->orWhere('no_hp', 'like', '%' . $search . '%')
+                    ->orWhere('alamat', 'like', '%' . $search . '%')
+                    ->orWhere('tgl_join', 'like', '%' . $search . '%');
+        });
+
+    }
+
     public function transaksi(){
         return $this->hasMany(Transaksi::class);
     }

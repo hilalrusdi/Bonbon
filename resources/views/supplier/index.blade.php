@@ -2,19 +2,26 @@
 
 @section('container')
 
+    @if ($suppliers->count())
+
     <div class="card_table">
         <h1 class="tittle_table">Tabel Supplier</h1>
         <div class="tambah_akun">
         @if(session()->has('success'))
             @include('partial.alert')
         @endif
-        
-            <form action="/supplier/tambah">
-            @csrf
-            <button type="submit" class="btn-tambah">
-                <span>Tambah Akun</span>
-            </button>
-            </form>
+            <div class="flexbox">
+                
+
+                <form action="/supplier/tambah" class="">
+                    @csrf
+                    <button type="submit" class="btn-tambah flex">
+                        <span>Tambah Akun</span>
+                    </button>
+                </form>
+                @include('partial.search')
+            </div>
+           
         </div>
         <table class="tabel_karyawan">
             <thead class="thead_karyawan">
@@ -41,5 +48,8 @@
             </tbody>
         </table>
     </div>
+    @else
+    <h1 class="tittle_table">Page not Found</h1>
+    @endif
 
 @endsection

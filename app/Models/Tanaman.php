@@ -16,6 +16,18 @@ class Tanaman extends Model
         'alamat',
     ];
 
+    public function scopeFilter($query, array $filters)
+    {
+
+        $query->when($filters['search'] ?? false, function($query, $search){
+            return $query->where('nama', 'like', '%' . $search . '%')
+                    ->orWhere('spesies', 'like', '%' . $search . '%')
+                    ->orWhere('asal', 'like', '%' . $search . '%')
+                    ->orWhere('alamat', 'like', '%' . $search . '%');
+        });
+
+    }
+
     public function transaksi(){
         return $thin->hasMany(Transaksi::class);
     }

@@ -23,9 +23,6 @@ use App\Models\Transaksi;
 
 
 
-Route::get('/about', function () {
-    return view('about');
-});
 
 Route::get('/nav', function () {
     return view('nav');

@@ -15,7 +15,7 @@ class TanamanController extends Controller
             'image' => 'img/bonbon.jpg',
             'profile' =>  'user.png',
             'css' => 'css/whyy.css',
-            'tanamen' => Tanaman::all()
+            'tanamen' => Tanaman::latest()->filter(request(['search']))->get()
         ]);
     }
 

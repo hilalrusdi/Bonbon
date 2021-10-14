@@ -10,13 +10,14 @@ class SupplierController extends Controller
 {
     public function index()
     {
+        
         return view('supplier.index', [
             'tittle' => 'Supplier',
             'active' => 'supplier',
             'image' => 'img/bonbon.jpg',
             'profile' =>  'user.png',
             'css' => 'css/whyy.css',
-            'suppliers' => Supplier::all()
+            'suppliers' => Supplier::latest()->filter(request(['search']))->get()
         ]);
     }
 
