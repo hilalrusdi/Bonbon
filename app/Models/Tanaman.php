@@ -9,6 +9,8 @@ class Tanaman extends Model
 {
     use HasFactory;
 
+    protected $table = 'tanamen';
+
     protected $fillable = [
         'nama',
         'spesies',
@@ -28,7 +30,7 @@ class Tanaman extends Model
 
     }
 
-    public function transaksi(){
-        return $thin->hasMany(Transaksi::class);
+    public function transaksis(){
+        return $this->hasMany(Transaksi::class);
     }
 }

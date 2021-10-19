@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Tanaman;
+use DB;
 
 class TanamanController extends Controller
 {
@@ -15,7 +16,7 @@ class TanamanController extends Controller
             'image' => 'img/bonbon.jpg',
             'profile' =>  'user.png',
             'css' => 'css/whyy.css',
-            'tanamen' => Tanaman::latest()->filter(request(['search']))->get()
+            'tanamen' => Tanaman::filter(request(['search']))->paginate(10)
         ]);
     }
 
@@ -47,5 +48,46 @@ class TanamanController extends Controller
         $request->session()->flash('success', 'Berhasil menambah data!');
         return redirect('/tanaman');
         
+    }
+
+    public function delete($id)
+    {
+        DB::table('tanamen')->where('id', $id)->delete();
+        return redirect('tanaman')->with('delete', 'Data berhasil dihapus!!');
+        
+    }
+
+    public function edit($id)
+    {
+        return view('tanaman.edit.index', [
+            "tittle" => "Tanaman",
+            "active" => "edit",
+            "image" => "img/bonbon.jpg",
+            "profile" => "user.png",
+            "css" => "css/whyy.css",
+            'tanamen' => Tanaman::find($id)
+        ]);
+
+        
+
+    }
+
+    public function update(Request $request)
+    {
+        $rules = [
+            'nama' => 'required',
+            'spesies' => 'required|unique:tanamen',
+            'asal' => 'required',
+            'alamat' => 'required',
+        ];
+
+        $validatedData = $request->validate($rules);
+        
+
+        Tanaman::updateOrCreate($validatedData);
+
+
+        $request->session()->flash('success', 'Berhasil mengubah data!');
+        return redirect('/tanaman');
     }
 }

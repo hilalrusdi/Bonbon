@@ -30,9 +30,9 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Transaksi::create([
-            // 'supplier_id' => '1',
-            // 'tanaman_id' => '2',
-            
+            'supplier_id' => '1',
+            'tanaman_id' => '2',
+            'user_id' => '4',
             'nama' => 'haloo',
             'tgl' => '2021-12-01',
             'no_hp' => '0895635',
@@ -43,11 +43,11 @@ class DatabaseSeeder extends Seeder
             
         ]);
 
-        Supplier::factory(5)->create();
+        Supplier::factory(15)->create();
 
         Tanaman::factory(5)->create();
 
-        // Transaksi::factory(5)->create();
+        Transaksi::factory(5)->create();
 
         // $this->call(LaratrustSeeder::class);
     }

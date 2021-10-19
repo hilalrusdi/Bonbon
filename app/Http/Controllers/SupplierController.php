@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Supplier;
+use DB;
 
 class SupplierController extends Controller
 {
@@ -17,7 +18,7 @@ class SupplierController extends Controller
             'image' => 'img/bonbon.jpg',
             'profile' =>  'user.png',
             'css' => 'css/whyy.css',
-            'suppliers' => Supplier::latest()->filter(request(['search']))->get()
+            'suppliers' => Supplier::filter(request(['search']))->paginate(10)
         ]);
     }
 
@@ -49,5 +50,27 @@ class SupplierController extends Controller
         $request->session()->flash('success', 'Berhasil menambah data!');
         return redirect('/supplier');
         
+    }
+
+    public function delete($id)
+    {
+        DB::table('suppliers')->where('id', $id)->delete();
+        return redirect('supplier')->with('delete', 'Data berhasil dihapus!!');
+        
+    }
+
+    public function edit($id)
+    {
+        return view('supplier.edit.index', [
+            "tittle" => "Supplier",
+            "active" => "edit",
+            "image" => "img/bonbon.jpg",
+            "profile" => "user.png",
+            "css" => "css/whyy.css",
+            'suppliers' => Supplier::find($id)
+        ]);
+
+        
+
     }
 }

@@ -1,7 +1,8 @@
 @extends('layout.main')
 
 @section('container')
-    <table>
-        halooo
-    </table>
+    <h1>Detail Data {{ $tittle }}</h1>
+    <h2>
+        Company : {{ $transaksis->suppliers->company }}
+    </h2>
 @endsection

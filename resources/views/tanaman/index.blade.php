@@ -10,6 +10,9 @@
         @if(session()->has('success'))
             @include('partial.alert')
         @endif
+        @if(session()->has('delete'))
+            @include('partial.alert')
+        @endif
         
             <div class="flexbox">
                 <form action="/tanaman/tambah" class="">
@@ -30,6 +33,7 @@
                     <th>Spesies</th>
                     <th>Asal</th>
                     <th>Alamat</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody class="tbody_karyawan">
@@ -40,6 +44,18 @@
                         <td>{{ $data->spesies }}</td>
                         <td>{{ $data->asal }}</td>
                         <td>{{ $data->alamat }}</td>
+                        <td>
+                            <form action="{{ url('tanaman/'.$data->id) }}" method="POST">
+                                @method('delete')
+                                @csrf
+                                <button class="btn-action" onclick="return confirm('Ingin menghapus data ini?')"><i class="fas fa-trash-alt"></i></button>
+                            </form>
+                            <form action="/tanaman/{{ $data->id }}/edit" method="POST">
+                                @method('put')
+                                @csrf
+                                <button class="btn-action"><i class="fas fa-edit"></i></button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
@@ -48,5 +64,7 @@
     @else
     <h1 class="tittle_table">Page not Found</h1>
     @endif
+
+    {{ $tanamen->links('vendor.pagination.custom') }}
 
 @endsection

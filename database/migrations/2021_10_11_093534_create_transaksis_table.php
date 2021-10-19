@@ -15,9 +15,9 @@ class CreateTransaksisTable extends Migration
     {
         Schema::create('transaksis', function (Blueprint $table) {
             $table->id();
-            // $table->foreignId('supplier_id');
-            // $table->foreignId('tanaman_id');
-            // $table->foreignId('user_id');
+            $table->foreignId('supplier_id');
+            $table->foreignId('tanaman_id');
+            $table->foreignId('user_id');
             $table->string('nama');
             $table->date('tgl');
             $table->string('no_hp');

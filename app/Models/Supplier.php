@@ -9,6 +9,8 @@ class Supplier extends Model
 {
     use HasFactory;
 
+    protected $table = 'suppliers';
+
     protected $fillable = [
         'company',
         'name',
@@ -30,7 +32,7 @@ class Supplier extends Model
 
     }
 
-    public function transaksi(){
+    public function transaksis(){
         return $this->hasMany(Transaksi::class);
     }
 

@@ -11,6 +11,9 @@
         @if(session()->has('success'))
             @include('partial.alert')
         @endif
+        @if(session()->has('delete'))
+            @include('partial.alert')
+        @endif
         
             <div class="flexbox">
                 <form action="/registration" class="">
@@ -34,6 +37,7 @@
                         <th>Nomor Hp</th>
                         <th>Alamat</th>
                         <th>Tanggal Kerja</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody class="tbody_karyawan">
@@ -46,6 +50,18 @@
                             <td>{{ $user->no_hp }}</td>
                             <td>{{ $user->alamat }}</td>
                             <td>{{ $user->tgl_kerja }}</td>
+                            <td>
+                                <form action="{{ url('karyawan/'.$user->id) }}" method="POST">
+                                    @method('delete')
+                                    @csrf
+                                    <button class="btn-action" onclick="return confirm('Ingin menghapus data ini?')"><i class="fas fa-trash-alt"></i></button>
+                                </form>
+                                <form action="/karyawan/{{ $user->id }}/edit" method="POST">
+                                    @method('put')
+                                    @csrf
+                                    <button class="btn-action"><i class="fas fa-edit"></i></button>
+                                </form>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -55,5 +71,7 @@
     @else
     <h1 class="tittle_table">Page not Found</h1>
     @endif
+
+    {{ $users->links('vendor.pagination.custom') }}
 
 @endsection

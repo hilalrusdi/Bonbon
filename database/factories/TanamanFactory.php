@@ -23,7 +23,7 @@ class TanamanFactory extends Factory
     public function definition()
     {
         return [
-            'nama' => $this->faker->name(),
+            'nama' => $this->faker->word(),
             'spesies' => $this->faker->company(),
             'asal' => $this->faker->country(),
             'alamat' => $this->faker->address(),

@@ -4,6 +4,25 @@
     font-size: 13px;
 }
 
+::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+select::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+select::-webkit-scrollbar-thumb {
+    background: rgb(152, 152, 255);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(152, 152, 255);
+    border-radius: 10px;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -61,7 +80,7 @@ form .jenis_kelamin .kategori{
     justify-content: space-between;
 }
 
-.jenis_kelamin{
+/* .jenis_kelamin{
     margin-bottom: 2rem;
 }
 
@@ -78,7 +97,7 @@ form .jenis_kelamin .kategori{
     margin-right: 1rem;
     border: 3px solid transparent;
     transition: all 0.1s ease;
-}
+} */
 
 #dot-1:checked ~ .kategori label .one,
 #dot-2:checked ~ .kategori label .two{
@@ -110,4 +129,15 @@ form .button input{
 
 form .button input:hover{
     background: rgb(97, 97, 255);
+}
+
+.standar-select{
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    padding: 0.5em 1em;
+    background: rgb(46, 36, 36);
+    color: silver;
+    border: 0;
+    width: 100%;
+    border-radius: 5px;
 }

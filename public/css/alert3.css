@@ -13,7 +13,10 @@
     opacity: 1;
     pointer-events: painted;
     align-items: center;
+    margin-bottom: 5rem;
 }
+
+
 
 .alert .fa-circle{
     position: absolute;
