@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="{{ asset('css/profile2.css') }}">
     <link rel="stylesheet" href="{{ asset('css/alert3.css') }}">
     <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
-    <link rel="stylesheet" href= "{{ asset('css/tabel.css') }}">
+    <link rel="stylesheet" href= "{{ asset('css/tabel1.css') }}">
     <link rel="stylesheet" href= "{{ asset('css/search.css') }}">
     <link rel="stylesheet" href= "{{ asset('css/page.css') }}">
+    <link rel="stylesheet" href= "{{ asset('css/detail.css') }}">
     <title>{{$tittle}} | Bonbon</title>
     <script src="https://kit.fontawesome.com/e7c8958365.js" crossorigin="anonymous"></script>
 </head>

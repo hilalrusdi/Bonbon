@@ -3,55 +3,66 @@
 namespace App\Http\Controllers;
 
 use App\Models\Transaksi;
-use App\Models\Supplier;
-use App\Models\User;
 use App\Models\Tanaman;
-use Illuminate\Http\Request;
-use Cviebrock\EloquentSluggable\Sluggable;
-use \Cviebrock\EloquentSluggable\Services\SlugService;
+use App\Models\User;
+use App\Models\Supplier;
 use DB;
+
+use Illuminate\Http\Request;
 
 class TransaksiController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         return view('transaksi.index', [
             "tittle" => "Transaksi",
             "active" => "transaksi",
             "image" => "img/bonbon.jpg",
-            "profile" =>  'user.png',
+            "profile" =>  'img/user_menu.png',
             "css" => "css/whyy.css",
             "transaksis" => Transaksi::filter(request(['search']))->paginate(10),
-            "supplier" => Supplier::all(),
-            "tanaman" => Tanaman::all(),
-            
+            "tanamans" => Tanaman::filter(request(['search']))->paginate(10),
+            "suppliers" => Supplier::filter(request(['search']))->paginate(10),
+            "users" => User::filter(request(['search']))->paginate(10),
         ]);
     }
 
-    
-
-    public function detail($id)
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
-        return view('detail', [
-            "tittle" => "Detail Transaksi",
-            "active" => "detail transaksi",
+        return view('transaksi.create', [
+            "tittle" => "Transaksi",
+            "active" => "tambah",
             "image" => "img/bonbon.jpg",
-            "profile" => 'user.png',
+            "profile" => "img/user_menu.png",
             "css" => "css/whyy.css",
-            "transaksis" => Transaksi::find($id),
+            "tanamans" => Tanaman::all(),
             "suppliers" => Supplier::all(),
-            "tanamen" => Tanaman::all(),
-            
+            "users" => User::all(),
         ]);
     }
 
-
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'supplier_id' => 'required',
-            'tanaman_id' => 'required',
             'nama' => 'required',
+            'tanaman_id' => 'required',
+            'supplier_id' => 'required',
             'tgl' => 'required',
             'no_hp' => 'required',
             'status' => 'required',
@@ -62,78 +73,64 @@ class TransaksiController extends Controller
 
         $validatedData['user_id'] = auth()->user()->id;
         
-        
-
         Transaksi::create($validatedData);
         $request->session()->flash('success', 'Berhasil menambah data!');
         return redirect('/transaksi');
-
-        $transaksis->slug = SlugService::createSlug(Transaksi::class, 'slug', $request->nama); 
-        // $transaksis->supplier_id = $validatedData['supplier_id'];
-        // $transaksis->tanaman_id = $validatedData['tanaman_id'];
-        // $transaksis->user_id = $validatedData['user_id'];
-        
     }
 
-    public function create()
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Transaksi  $transaksi
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
     {
-        return view('transaksi.tambah.index', [
+        return view('transaksi.detail', [
             "tittle" => "Transaksi",
             "active" => "tambah",
             "image" => "img/bonbon.jpg",
-            "profile" => "user.png",
+            "profile" => "img/user_menu.png",
             "css" => "css/whyy.css",
+            'transaksis' => Transaksi::find($id),
+            'tanamans' => Tanaman::all(),
             'suppliers' => Supplier::all(),
-            'tanamen' => Tanaman::all(),
         ]);
     }
 
-    public function checkSlug(Request $request){
-        $transaksis->slug = SlugService::createSlug(Transaksi::class, 'slug', $request->nama);
-    }
-
-    public function show()
-    {
-        return view('transaksi.tambah.index', [
-            "tittle" => "Transaksi",
-            "active" => "tambah",
-            "image" => "img/bonbon.jpg",
-            "profile" => "user.png",
-            "css" => "css/whyy.css",
-            "transaksis" => Transaksi::all(),
-            "suppliers" => Supplier::all(),
-            "tanamen" => Tanaman::all(),
-            "user" => User::all(),
-        ]);
-    }
-
-    public function delete($id)
-    {
-        DB::table('transaksis')->where('id', $id)->delete();
-        return redirect('transaksi')->with('delete', 'Data berhasil dihapus!!');
-        
-    }
-
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Transaksi  $transaksi
+     * @return \Illuminate\Http\Response
+     */
     public function edit($id)
     {
-        return view('transaksi.edit.index', [
+        return view('transaksi.edit', [
             "tittle" => "Transaksi",
             "active" => "tambah",
             "image" => "img/bonbon.jpg",
-            "profile" => "user.png",
+            "profile" => "img/user_menu.png",
             "css" => "css/whyy.css",
+            'transaksis' => Transaksi::find($id),
+            'tanamans' => Tanaman::all(),
             'suppliers' => Supplier::all(),
-            'tanamen' => Tanaman::all(),
-            'transaksis' => Transaksi::find($id)
         ]);
     }
 
-    public function update(Request $request, Transaksi $transaksis)
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Transaksi  $transaksi
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Transaksi $transaksi)
     {
         $rules = [
-            'supplier_id' => 'required',
-            'tanaman_id' => 'required',
             'nama' => 'required',
+            'tanaman_id' => 'required',
+            'supplier_id' => 'required',
             'tgl' => 'required',
             'no_hp' => 'required',
             'status' => 'required',
@@ -141,20 +138,26 @@ class TransaksiController extends Controller
             'total' => 'required',
         ];
 
-        // if($request->slug != $transaksi->slug){
-        //     $rules['slug'] = 'required|unique:transaksis';
-        // }
+        $validatedData['user_id'] = auth()->user()->id;
 
         $validatedData = $request->validate($rules);
-
-        $validatedData['user_id'] = auth()->user()->id;
         
+        Transaksi::where('id', $transaksi->id)
+                ->update($validatedData);        
+
+        return redirect('/transaksi')->with('success', 'Berhasil mengubah data!');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Transaksi  $transaksi
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        DB::table('transaksis')->where('id', $id)->delete();
+        return redirect('transaksi')->with('delete', 'Data berhasil dihapus!!');
         
-
-        Transaksi::updateOrCreate($validatedData);
-
-
-        $request->session()->flash('success', 'Berhasil mengubah data!');
-        return redirect('/transaksi');
     }
 }

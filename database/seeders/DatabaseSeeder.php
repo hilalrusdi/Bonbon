@@ -3,10 +3,10 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\User;
 use App\Models\Supplier;
 use App\Models\Tanaman;
 use App\Models\Transaksi;
+use App\Models\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,38 +17,26 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory(5)->create();
+        // \App\Models\User::factory(10)->create();
 
         User::create([
-            'name' => 'Hilal Rusdi',
-            'NIK' => '351511',
+            'name' => 'Hilal',
+            'nik' => '351511',
             'password' => bcrypt('12345'),
             'born' => '31 agustus 2001',
             'no_hp' => '0826347263',
             'alamat' => 'sidoarjo',
             'tgl_kerja' => '2008-09-24',
+            'is_admin' => true,
         ]);
 
-        Transaksi::create([
-            'supplier_id' => '1',
-            'tanaman_id' => '2',
-            'user_id' => '4',
-            'nama' => 'haloo',
-            'tgl' => '2021-12-01',
-            'no_hp' => '0895635',
-            'status' => 'lunas',
-            'ket' => 'wow',
-            'total' => '50000',
-            'slug' => 'Haloo'
-            
-        ]);
+        Supplier::factory(20)->create();
 
-        Supplier::factory(15)->create();
+        User::factory(15)->create();
 
         Tanaman::factory(5)->create();
 
         Transaksi::factory(5)->create();
 
-        // $this->call(LaratrustSeeder::class);
     }
 }

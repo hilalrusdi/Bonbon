@@ -4,31 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Cviebrock\EloquentSluggable\Sluggable;
 
 class Transaksi extends Model
 {
     use HasFactory;
-    use Sluggable;
 
-
-    protected $table = 'transaksis';
-
-    public $primaryKey = 'id';
-    
-    protected $fillable = [
-        'supplier_id',
-        'tanaman_id',
-        'user_id',
-        'nama',
-        'tgl',
-        'no_hp',
-        'status',
-        'ket',
-        'total',
-        'slug'
-    ];
-
+    protected $guarded = ['id'];
 
     public function scopeFilter($query, array $filters)
     {
@@ -43,23 +24,12 @@ class Transaksi extends Model
 
     }
 
-    public function sluggable(): array
-    {
-        return [
-            'slug' => [
-                'source' => 'nama'
-            ]
-        ];
-    }
-
-    
-
-    public function suppliers(){
-        return $this->belongsTo(Supplier::class);
-    }
-
-    public function tanamen(){
+    public function tanaman(){
         return $this->belongsTo(Tanaman::class);
+    }
+
+    public function supplier(){
+        return $this->belongsTo(Supplier::class);
     }
 
     public function user(){

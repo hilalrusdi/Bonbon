@@ -80,5 +80,13 @@
 
 }
 
+.flex-1{
+    
+    margin-right: 5rem;
+    padding-right: 1rem;
+    height: 4rem;
+    z-index: 0;
+}
+
 
 

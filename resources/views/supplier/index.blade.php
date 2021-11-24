@@ -2,7 +2,7 @@
 
 @section('container')
 
-    @if ($suppliers->count())
+    {{-- @if ($suppliers->count()) --}}
 
     <div class="card_table">
         <h1 class="tittle_table">Tabel Supplier</h1>
@@ -16,7 +16,7 @@
             <div class="flexbox">
                 
 
-                <form action="/supplier/tambah" class="">
+                <form action="/supplier/create" class="">
                     @csrf
                     <button type="submit" class="btn-tambah flex">
                         <span>Tambah Akun</span>
@@ -30,8 +30,8 @@
             <thead class="thead_karyawan">
                 <tr class="tr_karyawan">
                     <th>ID</th>
-                    <th>Company</th>
-                    <th>Person In Charge</th>
+                    <th>Nama Perusahaan</th>
+                    <th>Penanggungjawab</th>
                     <th>Nomor Hp</th>
                     <th>Alamat</th>
                     <th>Tanggal Gabung</th>
@@ -48,15 +48,15 @@
                         <td>{{ $supplier->alamat }}</td>
                         <td>{{ $supplier->tgl_join }}</td>
                         <td>
-                            <form action="{{ url('supplier/'.$supplier->id) }}" method="POST">
+                            {{-- <form action="{{ url('supplier/'.$supplier->id) }}" method="POST">
                                 @method('delete')
                                 @csrf
-                                <button class="btn-action" onclick="return confirm('Ingin menghapus data ini?')"><i class="fas fa-trash-alt"></i></button>
-                            </form>
+                                <button class="btn-action btn-color-1" onclick="return confirm('Ingin menghapus data ini?')"><i class="fas fa-trash-alt"></i></button>
+                            </form> --}}
                             <form action="/supplier/{{ $supplier->id }}/edit" method="POST">
-                                @method('put')
+                                @method('get')
                                 @csrf
-                                <button class="btn-action"><i class="fas fa-edit"></i></button>
+                                <button class="btn-action btn-color-2"><i class="fas fa-edit"></i></button>
                             </form>
                         </td>
                     </tr>
@@ -64,9 +64,9 @@
             </tbody>
         </table>
     </div>
-    @else
+    {{-- @else
     <h1 class="tittle_table">Page not Found</h1>
-    @endif
+    @endif --}}
 
     {{ $suppliers->links('vendor.pagination.custom') }}
 

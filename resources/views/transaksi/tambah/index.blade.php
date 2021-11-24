@@ -8,7 +8,7 @@
                 @csrf
                 <div class="user_reg">
                     <div class="input_reg">
-                        <span class="detail">Nama Pembeli</span>
+                        <span class="detail">Nama Supplier</span>
                         <input type="text" name="nama" id="nama" value="{{old('nama')}}" required> 
                     </div>
                     @error('nama')
@@ -55,9 +55,9 @@
                             <option value="belum lunas">belum lunas</option>
                         </select>
                     </div>
-                    @error('status')
+                    
                     <div class="error-1">kesalahan memasukkan status</div>
-                    @enderror
+                    
 
 
                     <div class="input_reg">

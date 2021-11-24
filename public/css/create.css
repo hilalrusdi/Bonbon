@@ -30,7 +30,16 @@ select::-webkit-scrollbar-thumb {
     font-family: 'Poppins';
 }
 
-body{
+.body-1{
+    display: flex;
+    height: 140vh;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background: linear-gradient(rgb(10, 85, 39),rgb(11, 167, 71),rgb(53, 90, 46));
+}
+
+.body-2{
     display: flex;
     height: 100vh;
     justify-content: center;

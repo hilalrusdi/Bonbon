@@ -4,7 +4,7 @@
 
         <div class="container_reg" >
             <div class="tittle_reg">Tambah Data {{ $tittle }}</div>
-            <form action="/supplier/tambah" method="post">
+            <form action="/supplier/{{ $suppliers->id }}/edit" method="post">
                 @csrf
                 <div class="user_reg">
                     <div class="input_reg">
@@ -30,7 +30,7 @@
                     
                 </div>
                 <div class="button">
-                    <input type="submit" name="submit" value="Tambah">
+                    <input type="submit" name="submit" value="Ubah">
                 </div>
             </form>
         

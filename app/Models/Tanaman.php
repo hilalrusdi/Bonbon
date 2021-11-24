@@ -9,14 +9,7 @@ class Tanaman extends Model
 {
     use HasFactory;
 
-    protected $table = 'tanamen';
-
-    protected $fillable = [
-        'nama',
-        'spesies',
-        'asal',
-        'alamat',
-    ];
+    protected $guarded = ['id'];
 
     public function scopeFilter($query, array $filters)
     {
@@ -25,12 +18,20 @@ class Tanaman extends Model
             return $query->where('nama', 'like', '%' . $search . '%')
                     ->orWhere('spesies', 'like', '%' . $search . '%')
                     ->orWhere('asal', 'like', '%' . $search . '%')
-                    ->orWhere('alamat', 'like', '%' . $search . '%');
+                    ->orWhere('bobot1', 'like', '%' . $search . '%')
+                    ->orWhere('bobot2', 'like', '%' . $search . '%')
+                    ->orWhere('bobot3', 'like', '%' . $search . '%')
+                    ->orWhere('bobot4', 'like', '%' . $search . '%')
+                    ->orWhere('bobot5', 'like', '%' . $search . '%');
         });
 
     }
 
-    public function transaksis(){
+    public function transaksi(){
         return $this->hasMany(Transaksi::class);
+    }
+
+    public function quality(){
+        return $this->hasMany(Quality::class);
     }
 }

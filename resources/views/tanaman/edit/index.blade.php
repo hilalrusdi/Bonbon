@@ -4,7 +4,8 @@
 
         <div class="container_reg" >
             <div class="tittle_reg">edit Data {{ $tittle }}</div>
-            <form action="/tanaman/{{ $tanamen->id }}/edit" method="POST">
+            {{-- <form action="{{route('tanaman.edit',$tanamen->id)}}" method="POST"> --}}
+            <form action="{{ url('tanaman/'.$tanamen->id. '/edit') }}" method="POST">
                 {{-- @method('put') --}}
                 @csrf
                 <div class="user_reg">

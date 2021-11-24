@@ -8,11 +8,6 @@ use Illuminate\Support\Str;
 
 class TanamanFactory extends Factory
 {
-    /**
-     * The name of the factory's corresponding model.
-     *
-     * @var string
-     */
     protected $model = Tanaman::class;
 
     /**
@@ -24,9 +19,8 @@ class TanamanFactory extends Factory
     {
         return [
             'nama' => $this->faker->word(),
-            'spesies' => $this->faker->company(),
+            'spesies' => $this->faker->word(),
             'asal' => $this->faker->country(),
-            'alamat' => $this->faker->address(),
         ];
     }
 }

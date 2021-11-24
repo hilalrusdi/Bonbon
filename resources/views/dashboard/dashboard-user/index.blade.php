@@ -7,7 +7,7 @@
       <div class="head">
             <h1>Dashboard Page as User</h1>
       </div>
-      <div class="row justify-content-center">
+      {{-- <div class="row justify-content-center">
             <div class="col-2  mb-3">
                   <div class="card text-center">
                         <h4 class="card-header">Data Supplier</h1>
@@ -39,7 +39,7 @@
                         <h4 class="card-header">Data Quality Check</h1>
                         <img src="{{url('/img/5.jpg')}}" class="card-img-bottom" alt="Try5">
                   </div>
-            </div>
+            </div> --}}
 
 
     @foreach ($posts as $post)

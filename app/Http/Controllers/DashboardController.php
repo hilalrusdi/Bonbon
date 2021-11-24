@@ -3,39 +3,88 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Dashboard;
 
 class DashboardController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        return view('dashboard.dashboard-user.index', [
+        return view('dashboard.index', [
             'tittle' => 'Dashboard',
             'active' => 'dashboard',
             'image' => 'img/bonbon.jpg',
-            'profile' => 'user.png',
-            'telepon' => '0894572384',
-            'job' => 'Project Manajer',
-            'nama' => 'Nabila',
-            'email' => 'nabila@gmail.com',
-            'css' => 'css/table1.css',
-            'posts' => Dashboard::all()
+            'profile' =>  'img/user_menu.png',
+            'css' => 'css/whyy.css',
         ]);
     }
 
-    public function admin()
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
-        return view('dashboard.dashboard-admin.index', [
-            'tittle' => 'Dashboard',
-            'active' => 'dashboard',
-            'image' => 'img/bonbon.jpg',
-            'profile' => 'img/user.png',
-            'telepon' => '0894572384',
-            'job' => 'Project Manajer',
-            'nama' => 'Nabila',
-            'email' => 'nabila@gmail.com',
-            'css' => 'css/table1.css',
-            'posts' => Dashboard::all()
-        ]);
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
     }
 }

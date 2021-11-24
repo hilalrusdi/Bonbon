@@ -6,8 +6,8 @@
             <li class="nav-logo border">
                 <a class="logo-link" href="">
                     <!-- <span class="logo">BONBON</span> -->
-                    <img class="bonbon" src="{{ url('a.png') }}" alt="">
-                    <span class="logo-tittle"><img class="bobon2" src="{{ url('text.jpg') }}" alt=""></span>
+                    <img class="bonbon" src="{{ url('img/a.png') }}" alt="">
+                    <span class="logo-tittle"><img class="bobon2" src="{{ url('img/text.jpg') }}" alt=""></span>
                     
                 </a>
             </li>
@@ -19,19 +19,22 @@
                 </a>
             </li>
 
+            @can('admin')
             <li class="nav-item">
                 <a class="nav-link {{ ($tittle === 'Supplier') ? 'point' : '' }}" href="/supplier">
                     <span class="nav-icon"><ion-icon name="storefront-outline"></ion-icon></span>
                     <span class="nav-tittle">Supplier</span>
                 </a>
             </li>
+            
 
             <li class="nav-item">
-                <a class="nav-link {{ ($tittle === 'Karyawan') ? 'point' : '' }}" href="/karyawan">
+                <a class="nav-link {{ ($tittle === 'User') ? 'point' : '' }}" href="/user">
                     <span class="nav-icon"><ion-icon name="man-outline"></ion-icon></span>
                     <span class="nav-tittle">Karyawan</span>
                 </a>
             </li>
+            @endcan('admin')
 
             <li class="nav-item">
                 <a class="nav-link {{ ($tittle === 'Tanaman') ? 'point' : '' }}" href="/tanaman">

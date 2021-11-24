@@ -9,15 +9,7 @@ class Supplier extends Model
 {
     use HasFactory;
 
-    protected $table = 'suppliers';
-
-    protected $fillable = [
-        'company',
-        'name',
-        'no_hp',
-        'alamat',
-        'tgl_join',
-    ];
+    protected $guarded = ['id'];
 
     public function scopeFilter($query, array $filters)
     {
@@ -32,9 +24,7 @@ class Supplier extends Model
 
     }
 
-    public function transaksis(){
+    public function transaksi(){
         return $this->hasMany(Transaksi::class);
     }
-
-    
 }

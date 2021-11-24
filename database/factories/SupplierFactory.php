@@ -8,11 +8,6 @@ use Illuminate\Support\Str;
 
 class SupplierFactory extends Factory
 {
-    /**
-     * The name of the factory's corresponding model.
-     *
-     * @var string
-     */
     protected $model = Supplier::class;
 
     /**

@@ -2,7 +2,7 @@
 
 @section('container')
 
-    @if ($tanamen->count())
+    {{-- @if ($tanamans->count()) --}}
 
     <div class="card_table">
         <h1 class="tittle_table">Tabel Tanaman</h1>
@@ -15,56 +15,74 @@
         @endif
         
             <div class="flexbox">
-                <form action="/tanaman/tambah" class="">
+                @can('admin')
+                <form action="/tanaman/create" class="">
                     @csrf
                     <button type="submit" class="btn-tambah flex">
                         <span>Tambah Akun</span>
                     </button>
                 </form>
+                @endcan
+                <div class="flex-1">
                 @include('partial.search')
+                </div>
             </div>
 
         </div>
         <table class="tabel_karyawan">
             <thead class="thead_karyawan">
                 <tr class="tr_karyawan">
-                    <th>Nomor</th>
+                    <th>ID</th>
                     <th>Nama</th>
                     <th>Spesies</th>
                     <th>Asal</th>
-                    <th>Alamat</th>
-                    <th>Action</th>
+                    {{-- <th>Bobot</th> --}}
+                    @can('admin')
+                    <th class="w-1">Action</th>
+                    @endcan
                 </tr>
             </thead>
             <tbody class="tbody_karyawan">
-                @foreach ($tanamen as $data)
+                @foreach ($tanamans as $data)
                     <tr class="tr_karyawan">
                         <td>{{ $data->id }}</td>
-                        <td>{{ $data->nama }}</td>
+                        <td>
+                            <a href="https://www.google.com/search?q={{ $data->nama }}">{{ $data->nama }}</a>
+                        </td>
                         <td>{{ $data->spesies }}</td>
                         <td>{{ $data->asal }}</td>
-                        <td>{{ $data->alamat }}</td>
+                        {{-- <td>
+                            @if ($tanamans->count($data->bobot1) == false)
+                            {{ $data->bobot1 }}, {{ $data->bobot2 }}, {{ $data->bobot3 }}, {{ $data->bobot4 }}, {{ $data->bobot5 }}
+                            @else
+                            -
+                            @endif
+                        </td> --}}
+                        {{-- <td></td> --}}
+                        @can('admin')
                         <td>
-                            <form action="{{ url('tanaman/'.$data->id) }}" method="POST">
+                            {{-- <form action="{{ url('tanaman/'.$data->id) }}" method="POST">
                                 @method('delete')
                                 @csrf
-                                <button class="btn-action" onclick="return confirm('Ingin menghapus data ini?')"><i class="fas fa-trash-alt"></i></button>
-                            </form>
+                                <button class="btn-action btn-color-1" onclick="return confirm('Ingin menghapus data ini?')"><i class="fas fa-trash-alt"></i></button>
+                            </form> --}}
+                            {{-- <form action="/tanaman/{{ $data->id }}/edit" method="POST"> --}}
                             <form action="/tanaman/{{ $data->id }}/edit" method="POST">
-                                @method('put')
+                                @method('get')
                                 @csrf
-                                <button class="btn-action"><i class="fas fa-edit"></i></button>
+                                <button class="btn-action btn-color-2"><i class="fas fa-edit"></i></button>
                             </form>
                         </td>
+                        @endcan
                     </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
-    @else
+    {{-- @else
     <h1 class="tittle_table">Page not Found</h1>
-    @endif
+    @endif --}}
 
-    {{ $tanamen->links('vendor.pagination.custom') }}
+    {{ $tanamans->links('vendor.pagination.custom') }}
 
 @endsection
