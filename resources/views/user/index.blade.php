@@ -6,7 +6,7 @@
     {{-- @if ($users->count()) --}}
     
     <div class="card_table">
-        <h1 class="tittle_table">Tabel Karyawan</h1>
+        <h1 class="tittle_table h1">Tabel Karyawan</h1>
         <div class="tambah_akun">
         @if(session()->has('success'))
             @include('partial.alert')
@@ -19,7 +19,7 @@
                 <form action="/user/create" class="">
                     @csrf
                     <button type="submit" class="btn-tambah flex">
-                        <span>Tambah Akun</span>
+                        <span>Tambah Data</span>
                     </button>
                 </form>
                 @include('partial.search')
@@ -32,7 +32,7 @@
                     <tr class="tr_karyawan">
                         <th>ID</th>
                         <th>Nama</th>
-                        <th>NIK</th>
+                        <th>Username</th>
                         <th>Tanggal Lahir</th>
                         <th>Nomor Hp</th>
                         <th>Alamat</th>
@@ -45,7 +45,7 @@
                         <tr class="tr_karyawan">
                             <td>{{ $user->id }}</td>
                             <td>{{ $user->name }}</td>
-                            <td>{{ $user->nik }}</td>
+                            <td>{{ $user->username }}</td>
                             <td>{{ $user->born }}</td>
                             <td>{{ $user->no_hp }}</td>
                             <td>{{ $user->alamat }}</td>

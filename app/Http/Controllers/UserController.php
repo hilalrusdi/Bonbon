@@ -47,7 +47,7 @@ class UserController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|max:255',
-            'nik' => 'required|unique:users|max:16',
+            'username' => 'required|unique:users|max:16',
             'born' => 'required',
             'no_hp' => 'required',
             'alamat' => 'required',
@@ -110,8 +110,8 @@ class UserController extends Controller
             'password' => 'required|min:5|max:25',
         ];
 
-        if($request->nik != $user->nik){
-            $rules['nik'] = 'required|unique:users|max:16';
+        if($request->username != $user->username){
+            $rules['username'] = 'required|unique:users|max:16';
         }
 
         $validatedData = $request->validate($rules);

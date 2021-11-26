@@ -70,6 +70,12 @@ class QualityController extends Controller
         ($validatedData['bobot4']/5)*$route->limit4 -
         ($validatedData['bobot5']/5)*$route->limit5;
 
+        if ($validatedData['total'] > 100) {
+            $validatedData['total'] = 100;
+        } elseif ($validatedData['total'] < 100) {
+            $validatedData['total'] = 0;
+        }
+
         Quality::create($validatedData);
 
 

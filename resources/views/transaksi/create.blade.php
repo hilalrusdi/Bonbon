@@ -102,7 +102,7 @@
                     
                 </div>
                 <div class="button">
-                    <input type="submit" name="submit" value="Tambah">
+                    <input type="submit" name="submit" value="Simpan">
                 </div>
             </form>
         </div>

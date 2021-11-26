@@ -3,7 +3,7 @@
         @section('form')
 
         <div class="container_reg" >
-            <div class="tittle_reg">Edit Data {{ $tittle }}</div>
+            <div class="tittle_reg">Mengubah Data {{ $tittle }}</div>
             <form action="/supplier/{{ $suppliers->id }}" method="post">
                 @method('put')
                 @csrf
@@ -31,7 +31,7 @@
                     
                 </div>
                 <div class="button">
-                    <input type="submit" name="submit" value="Ubah">
+                    <input type="submit" name="submit" value="Simpan">
                 </div>
             </form>
         

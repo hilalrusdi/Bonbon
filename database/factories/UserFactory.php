@@ -16,7 +16,7 @@ class UserFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
-            'nik' => $this->faker->unique()->phoneNumber(),
+            'username' => $this->faker->unique()->name(),
             'born' => $this->faker->date(),
             'no_hp' => $this->faker->phoneNumber(),
             'alamat' => $this->faker->address(),

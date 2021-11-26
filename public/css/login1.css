@@ -1,63 +1,112 @@
-body {
-    font-family: sans-serif;
-    background-color: #80c564;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
 
+*{
+    font-family: 'Poppins';
 }
 
-.box h1{
-    color: #cdf1aa;
-    text-transform: uppercase;
+body{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: 'Poppins';
+    /* background: #fff; */
+	background: linear-gradient(to bottom, #66806A, #446148, #2c5232);
+}
+.main{
+	width: 70vh;
+	height: 75vh;
+	background: #a6be93;
+	overflow: hidden;
+	/* background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover; */
+	border-radius: 10px;
+	box-shadow: 5px 20px 50px #000;
+}
+#chk{
+	display: none;
+}
+.signup{
+	position: relative;
+	width:100%;
+	height: 100%;
+}
+label{
+	color: #fff;
+	font-size: 2.3em;
+	justify-content: center;
+	display: flex;
+	margin: 60px;
+	font-weight: bold;
+    letter-spacing: 0.2rem;
+	/* cursor: pointer; */
+	transition: .5s ease-in-out;
+}
+input{
+	width: 60%;
+	height: 20px;
+	background: #e0dede;
+	justify-content: center;
+	display: flex;
+	margin: 20px auto;
+	padding: 10px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
 }
 
-.box {
-    width: 300px;
-    padding: 40px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    background: #7ea523;
-    text-align: center;
-    border-radius: 5%;
+.input{
+    width: 60%;
+	height: 20px;
+	justify-content: center;
+	display: flex;
+	margin: 5px auto;
+	border: none;
+	outline: none;
+    color: red;
+	border-radius: 5px;
 }
 
-.box input[type = "text"],.box input[type = "password"]{
-    border: 0;
-    display: block;
-    background: none;
-    outline: none;
-    background-color: rgb(60, 198, 216);
-    margin: 20px auto;
-    text-align: center;
-    border: 3px solid rgb(117, 128, 119);
-    color: rgb(216, 211, 211);
-    height: 40px;
-    border-radius: 20px;
-    cursor: context-menu;
+.button{
+	width: 65%;
+	height: 40px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: #fff;
+	background: #84917a;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+    letter-spacing: 0.1rem;
+}
+.button:hover{
+	background: #587046;
+}
+.login{
+	height: 460px;
+	background: #eee;
+	border-radius: 60% / 10%;
+	transform: translateY(-180px);
+	transition: .8s ease-in-out;
+}
+.login label{
+	color: #573b8a;
+	transform: scale(.6);
 }
 
-.box input[type = "text"]:focus,.box input[type = "password"]:focus{
-    width: 200px;
-    border-color: #8ad0db;
+#chk:checked ~ .login{
+	transform: translateY(-500px);
 }
-
-.box input[type = "submit"]{
-    border: 0;
-    display: block;
-    background: none;
-    outline: none;
-    background-color: rgb(25, 114, 126);
-    margin: 20px auto;
-    text-align: center;
-    border: 3px solid #5c5f50;
-    color: rgb(188, 235, 231);
-    height: 40px;
-    width: 100px;
-    border-radius: 20px;
-    cursor: pointer;
+#chk:checked ~ .login label{
+	transform: scale(1);	
 }
-
-.box input[type = "submit"]:hover{
-    background-color: #3b5a9d;
-    color: white;
-}
+/* #chk:checked ~ .signup label{
+	transform: scale(.6);
+} */

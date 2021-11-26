@@ -18,7 +18,7 @@ class LoginController extends Controller
     public function authenticate(Request $request)
     {
         $credentials = $request->validate([
-            'name' => 'required',
+            'username' => 'required',
             'password' => 'required',
         ]);
 
@@ -27,7 +27,7 @@ class LoginController extends Controller
             return redirect()->intended('/dashboard');
         }
 
-        return back()->with('loginError', 'Gagal Menyambungkan');
+        return back()->with('loginError', 'Data Belum Valid');
 
     }
 

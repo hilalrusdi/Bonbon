@@ -5,7 +5,7 @@
     {{-- @if ($tanamans->count()) --}}
 
     <div class="card_table">
-        <h1 class="tittle_table">Tabel Tanaman</h1>
+        <h1 class="tittle_table h1">Tabel Tanaman</h1>
         <div class="tambah_akun">
         @if(session()->has('success'))
             @include('partial.alert')
@@ -19,7 +19,7 @@
                 <form action="/tanaman/create" class="">
                     @csrf
                     <button type="submit" class="btn-tambah flex">
-                        <span>Tambah Akun</span>
+                        <span>Tambah Data</span>
                     </button>
                 </form>
                 @endcan

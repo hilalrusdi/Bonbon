@@ -24,9 +24,9 @@
 
 .mid{
     top: 20vh;
-    left: 50%;
+    left: 30%;
     transform: translate(-50%,-50%);
-    position: absolute;
+    position: relative;
 }
 
 .right{
@@ -43,6 +43,8 @@
     height: 50vh;
     border-radius: 5px;
     box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.596);
+    z-index: 0;
+
 }
 
 .card-2{
@@ -55,6 +57,20 @@
     height: 40vh;
     border-radius: 5px;
     box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.596);
+    z-index: 0;
+}
+
+.card-3{
+    /* display: block; */
+    display: flex;
+    position: relative;
+    margin: 7vh 3rem 0 0;
+    background-color: #D0CAB2;
+    width: 70vh;
+    height: 40vh;
+    border-radius: 5px;
+    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.596);
+    z-index: 0;
 }
 
 .content-1{

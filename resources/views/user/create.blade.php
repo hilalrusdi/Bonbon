@@ -11,10 +11,10 @@
                         <input type="text" name="name" id="name" required value="{{old('name')}}">
                     </div>
                     <div class="input_reg">
-                        <span class="detail"> NIK </span>
-                        <input type="text" name="nik" id="nik" required value="{{old('nik')}}">
-                        @error('nik')
-                        <div class="error-1">NIK sudah digunakan di akun lain</div>
+                        <span class="detail"> Username </span>
+                        <input type="text" name="username" id="username" required value="{{old('username')}}">
+                        @error('username')
+                        <div class="error-1">Username sudah digunakan di akun lain</div>
                         @enderror
                     </div>
                     <div class="input_reg">
@@ -59,7 +59,7 @@
                         </div>
                 </div> -->
                 <div class="button">
-                    <input type="submit" name="submit" value="Tambah">
+                    <input type="submit" name="submit" value="Simpan">
                 </div>
             </form>
         

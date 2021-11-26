@@ -65,7 +65,7 @@ class TanamanController extends Controller
 
         if ($cek == 100) {
             Tanaman::create($validatedData);
-            $request->session()->flash('success', $cek);
+            $request->session()->flash('success', 'Data Berhasil Ditambahkan!');
             return redirect('/tanaman');
         }
 

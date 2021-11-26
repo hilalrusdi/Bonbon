@@ -6,8 +6,8 @@
     {{-- @if ($transaksis->count()) --}}
     
 
-    <div class="card_table">
-        <h1 class="tittle_table">Tabel Quality</h1>
+    <div class="card_table pad-2">
+        <h1 class="tittle_table h1">Tabel Quality</h1>
         <div class="card_table container1">
     
             <div class="card-2 m-1">
@@ -18,34 +18,185 @@
                             <tr>
                                 <td>Indikator 1 </td>
                                 <td><pre>   </pre></td>
-                                <td>: </td>
+                                <td>: Busuk</td>
                             </tr>
                             <tr>
-                                <td>Tanggal Bayar </td>
+                                <td>Indikator 2 </td>
                                 <td><pre>   </pre></td>
-                                <td>: </td>
+                                <td>: Sedikit Busuk</td>
                             </tr>
                             <tr>
-                                <td>Nomor Handphone </td>
+                                <td>Indikator 3 </td>
                                 <td><pre>   </pre></td>
-                                <td>: </td>
+                                <td>: Standard</td>
                             </tr>
                             <tr>
-                                <td>Status Pemesanan</td>
+                                <td>Indikator 4</td>
                                 <td><pre>   </pre></td>
-                                <td>: </td>
+                                <td>: Segar</td>
                             </tr>
                             <tr>
-                                <td>Keterangan</td>
+                                <td>Indikator 5</td>
                                 <td><pre>   </pre></td>
-                                <td>: </td>
+                                <td>: Segar dan Rimbun</td>
                             </tr>
                         </tbody>
                         
                     </table>
                 </div>
             </div>
+
+
+            <div class="card-2 m-1">
+                <div class="content-1 font-0">
+                    <div class="tittle-1 font-2">Indikator Bobot 2 [Daun]</div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Indikator 1 </td>
+                                <td><pre>   </pre></td>
+                                <td>: Banyak Defects</td>
+                            </tr>
+                            <tr>
+                                <td>Indikator 2 </td>
+                                <td><pre>   </pre></td>
+                                <td>: Sediit Defects</td>
+                            </tr>
+                            <tr>
+                                <td>Indikator 3 </td>
+                                <td><pre>   </pre></td>
+                                <td>: Standard</td>
+                            </tr>
+                            <tr>
+                                <td>Indikator 4</td>
+                                <td><pre>   </pre></td>
+                                <td>: Segar</td>
+                            </tr>
+                            <tr>
+                                <td>Indikator 5</td>
+                                <td><pre>   </pre></td>
+                                <td>: Sangat Segar</td>
+                            </tr>
+                        </tbody>
+                        
+                    </table>
+                </div>
+            </div>
+
+            <div class="card-2 m-1">
+                <div class="content-1 font-0">
+                    <div class="tittle-1 font-2">Indikator Bobot 3 [Batang]</div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Indikator 1 </td>
+                                <td><pre>   </pre></td>
+                                <td>: Busuk</td>
+                            </tr>
+                            <tr>
+                                <td>Indikator 2 </td>
+                                <td><pre>   </pre></td>
+                                <td>: Sedikit Busuk</td>
+                            </tr>
+                            <tr>
+                                <td>Indikator 3 </td>
+                                <td><pre>   </pre></td>
+                                <td>: Standard</td>
+                            </tr>
+                            <tr>
+                                <td>Indikator 4</td>
+                                <td><pre>   </pre></td>
+                                <td>: Segar</td>
+                            </tr>
+                            <tr>
+                                <td>Indikator 5</td>
+                                <td><pre>   </pre></td>
+                                <td>: Sangat Segar</td>
+                            </tr>
+                        </tbody>
+                        
+                    </table>
+                </div>
+            </div>
+
         </div>
+
+        <div class="card_table container1">
+
+            <div class="card-3 mid">
+                <div class="content-1 font-0">
+                    <div class="tittle-1 font-2">Indikator Bobot 4 [Hama Hewan]</div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Indikator 1 </td>
+                                <td><pre>   </pre></td>
+                                <td>: Bersih</td>
+                            </tr>
+                            <tr>
+                                <td>Indikator 2 </td>
+                                <td><pre>   </pre></td>
+                                <td>: Sedikit Hama</td>
+                            </tr>
+                            <tr>
+                                <td>Indikator 3 </td>
+                                <td><pre>   </pre></td>
+                                <td>: Lumayan banyak</td>
+                            </tr>
+                            <tr>
+                                <td>Indikator 4</td>
+                                <td><pre>   </pre></td>
+                                <td>: Banyak</td>
+                            </tr>
+                            <tr>
+                                <td>Indikator 5</td>
+                                <td><pre>   </pre></td>
+                                <td>: Sangat Banyak</td>
+                            </tr>
+                        </tbody>
+                        
+                    </table>
+                </div>
+            </div>
+
+            <div class="card-3 mid">
+                <div class="content-1 font-0">
+                    <div class="tittle-1 font-2">Indikator Bobot 5 [Hama Fungi]</div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Indikator 1 </td>
+                                <td><pre>   </pre></td>
+                                <td>: Bersih</td>
+                            </tr>
+                            <tr>
+                                <td>Indikator 2 </td>
+                                <td><pre>   </pre></td>
+                                <td>: Sedikit Hama</td>
+                            </tr>
+                            <tr>
+                                <td>Indikator 3 </td>
+                                <td><pre>   </pre></td>
+                                <td>: Lumayan banyak</td>
+                            </tr>
+                            <tr>
+                                <td>Indikator 4</td>
+                                <td><pre>   </pre></td>
+                                <td>: Banyak</td>
+                            </tr>
+                            <tr>
+                                <td>Indikator 5</td>
+                                <td><pre>   </pre></td>
+                                <td>: Sangat Banyak</td>
+                            </tr>
+                        </tbody>
+                        
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
         <div class="tambah_akun">
         @if(session()->has('success'))
             @include('partial.alert')
